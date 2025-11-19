@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ORD-1763539310023",
+    "customer": {
+      "fullName": "khanh",
+      "email": "oggy.095@gmail.com",
+      "phone": "0395990338",
+      "address": "acc",
+      "note": "caca"
+    },
+    "cart": [
+      {
+        "id": "iphone-15-pro",
+        "name": "iPhone 15 Pro",
+        "price": 29990000,
+        "variant": "128GB",
+        "quantity": 1
+      }
+    ],
+    "payment": {
+      "method": "cod"
+    },
+    "status": "processing",
+    "createdAt": "2025-11-19T08:01:50.023Z"
+  }
+]

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextGen Phone Store</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <h1>Cửa hàng điện thoại cao cấp</h1>
+      <p>Siêu ưu đãi cuối năm - Giảm tới 5 triệu đồng + Trả góp 0%</p>
+      <div class="hero__actions">
+        <button id="btn-view-products">Khám phá sản phẩm</button>
+        <button class="outline" id="btn-view-cart">Xem giỏ hàng</button>
+      </div>
+      <ul class="hero__benefits">
+        <li>Giao nhanh 2h tại nội thành</li>
+        <li>Bảo hành chính hãng 24 tháng</li>
+        <li>Hỗ trợ lên đời với thu cũ đổi mới</li>
+      </ul>
+    </div>
+    <div class="hero__stats">
+      <div>
+        <span>+50K</span>
+        <p>Khách hàng hài lòng</p>
+      </div>
+      <div>
+        <span>4.9/5</span>
+        <p>Đánh giá trung bình</p>
+      </div>
+      <div>
+        <span>12+</span>
+        <p>Thương hiệu chính hãng</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="filters">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Tìm kiếm tên sản phẩm, thương hiệu..." />
+      </div>
+      <div class="filter-group">
+        <select id="brandFilter">
+          <option value="">Tất cả thương hiệu</option>
+        </select>
+        <select id="sortSelect">
+          <option value="">Sắp xếp</option>
+          <option value="price-asc">Giá tăng dần</option>
+          <option value="price-desc">Giá giảm dần</option>
+          <option value="rating-desc">Đánh giá cao</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="products" id="productGrid">
+      <!-- Rendered by JS -->
+    </section>
+  </main>
+
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-panel__header">
+      <h2>Giỏ hàng</h2>
+      <button id="btn-close-cart">×</button>
+    </div>
+    <div id="cartItems" class="cart-panel__items"></div>
+    <div class="cart-panel__footer">
+      <div class="summary-line">
+        <span>Tạm tính:</span>
+        <strong id="cartSubtotal">0₫</strong>
+      </div>
+      <div class="summary-line">
+        <span>Phí vận chuyển:</span>
+        <strong id="shippingFee">0₫</strong>
+      </div>
+      <div class="summary-line total">
+        <span>Tổng thanh toán:</span>
+        <strong id="cartTotal">0₫</strong>
+      </div>
+      <button id="btn-checkout" class="primary">Thanh toán</button>
+    </div>
+  </aside>
+
+  <section class="modal" id="checkoutModal" aria-hidden="true">
+    <div class="modal__content">
+      <header>
+        <h3>Thanh toán đơn hàng</h3>
+        <button id="btn-close-modal">×</button>
+      </header>
+      <form id="checkoutForm">
+        <div class="form-grid">
+          <label>
+            Họ và tên
+            <input type="text" name="fullName" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Số điện thoại
+            <input type="tel" name="phone" required />
+          </label>
+          <label>
+            Địa chỉ giao hàng
+            <input type="text" name="address" required />
+          </label>
+        </div>
+        <label>
+          Ghi chú đơn hàng
+          <textarea name="note" rows="3"></textarea>
+        </label>
+        <fieldset>
+          <legend>Phương thức thanh toán</legend>
+          <label class="radio">
+            <input type="radio" name="paymentMethod" value="cod" checked />
+            Thanh toán khi nhận hàng (COD)
+          </label>
+          <label class="radio">
+            <input type="radio" name="paymentMethod" value="card" />
+            Thẻ tín dụng/ghi nợ
+          </label>
+          <label class="radio">
+            <input type="radio" name="paymentMethod" value="momo" />
+            Ví MoMo/ ZaloPay
+          </label>
+        </fieldset>
+        <button type="submit" class="primary full">Xác nhận đặt hàng</button>
+      </form>
+    </div>
+  </section>
+
+  <template id="productCardTemplate">
+    <article class="product-card">
+      <div class="product-card__badges"></div>
+      <img alt="" class="product-card__image" loading="lazy" />
+      <h3></h3>
+      <p class="product-card__brand"></p>
+      <p class="product-card__desc"></p>
+      <div class="product-card__meta">
+        <span class="price"></span>
+        <span class="rating"></span>
+      </div>
+      <button class="primary">Thêm vào giỏ</button>
+    </article>
+  </template>
+
+  <template id="cartItemTemplate">
+    <div class="cart-item">
+      <div>
+        <strong class="cart-item__name"></strong>
+        <p class="cart-item__variant"></p>
+        <p class="cart-item__quantity"></p>
+      </div>
+      <div class="cart-item__actions">
+        <span class="cart-item__price"></span>
+        <div>
+          <button data-action="decrease">-</button>
+          <button data-action="increase">+</button>
+          <button data-action="remove">×</button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script src="app.js" type="module"></script>
+</body>
+
+</html>
+

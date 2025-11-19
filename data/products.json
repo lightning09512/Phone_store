@@ -1,0 +1,68 @@
+[
+  {
+    "id": "iphone-15-pro",
+    "name": "iPhone 15 Pro",
+    "brand": "Apple",
+    "price": 29990000,
+    "stock": 24,
+    "rating": 4.8,
+    "thumbnail": "images/iphone15pro.jpg",
+    "badges": ["Bán chạy", "Trả góp 0%"],
+    "description": "Chip A17 Pro, khung titan, camera 48MP, hỗ trợ USB-C.",
+    "variants": ["128GB", "256GB", "512GB"],
+    "colors": ["Natural Titanium", "Blue", "Black"]
+  },
+  {
+    "id": "galaxy-s24-ultra",
+    "name": "Samsung Galaxy S24 Ultra",
+    "brand": "Samsung",
+    "price": 27990000,
+    "stock": 15,
+    "rating": 4.7,
+    "thumbnail": "images/galaxys24ultra.jpg",
+    "badges": ["Mới", "Ưu đãi quà 5 triệu"],
+    "description": "Màn hình Dynamic AMOLED 2X 6.8\", S Pen, camera 200MP.",
+    "variants": ["256GB", "512GB"],
+    "colors": ["Gray", "Black", "Violet"]
+  },
+  {
+    "id": "xiaomi-14",
+    "name": "Xiaomi 14",
+    "brand": "Xiaomi",
+    "price": 17990000,
+    "stock": 30,
+    "rating": 4.5,
+    "thumbnail": "images/xiaomi14.jpg",
+    "badges": ["Giảm 3 triệu"],
+    "description": "Hợp tác Leica, Snapdragon 8 Gen 3, sạc nhanh 90W.",
+    "variants": ["256GB"],
+    "colors": ["Green", "Black"]
+  },
+  {
+    "id": "oppo-find-x7",
+    "name": "OPPO Find X7",
+    "brand": "OPPO",
+    "price": 19990000,
+    "stock": 12,
+    "rating": 4.4,
+    "thumbnail": "images/oppoFindX7.jpg",
+    "badges": ["Quà tặng loa Bluetooth"],
+    "description": "Camera chân dung chuyên nghiệp, màn hình 1.5K LTPO.",
+    "variants": ["256GB", "512GB"],
+    "colors": ["Purple", "Black"]
+  },
+  {
+    "id": "pixel-8-pro",
+    "name": "Google Pixel 8 Pro",
+    "brand": "Google",
+    "price": 24990000,
+    "stock": 8,
+    "rating": 4.6,
+    "thumbnail": "images/pixel8pro.jpg",
+    "badges": ["Hàng độc quyền"],
+    "description": "Tensor G3, camera AI, cập nhật 7 năm.",
+    "variants": ["128GB", "256GB"],
+    "colors": ["Bay", "Obsidian"]
+  }
+]
+
